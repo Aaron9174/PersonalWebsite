@@ -1,6 +1,0 @@
-README.md
-setup.py
-flashcards_python_LeMi11ion.egg-info/PKG-INFO
-flashcards_python_LeMi11ion.egg-info/SOURCES.txt
-flashcards_python_LeMi11ion.egg-info/dependency_links.txt
-flashcards_python_LeMi11ion.egg-info/top_level.txt
