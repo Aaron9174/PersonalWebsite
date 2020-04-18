@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aaron9174/Flashcards-Python.git"
+    "url": "git+https://github.com/Aaron9174/PersonalWebsite.git"
   },
   "author": "Aaron Hebson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aaron9174/Flashcards-Python/issues"
+    "url": "https://github.com/Aaron9174/PersonalWebsite.git/issues"
   },
-  "homepage": "https://github.com/Aaron9174/Flashcards-Python#readme"
+  "homepage": "https://github.com/Aaron9174/PersonalWebsite.git#readme"
 }
