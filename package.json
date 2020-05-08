@@ -1,0 +1,24 @@
+{
+  "name": "personalwebsite",
+  "version": "0.0.0",
+  "description": "Project to produce a personal website that will work as a repository for everything that I read online.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aaron9174/PersonalWebsite.git"
+  },
+  "author": "Aaron Hebson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aaron9174/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/Aaron9174/PersonalWebsite#readme",
+  "dependencies": {
+    "client": "0.0.1",
+    "create": "0.0.2",
+    "vue": "^2.6.11"
+  }
+}
