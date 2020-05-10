@@ -1,4 +1,5 @@
 const path = require('path');
+const webpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   pages: {
@@ -17,7 +18,7 @@ module.exports = {
   chainWebpack: (config) => {
     config
       .plugin('copy')
-      .use(require('copy-webpack-plugin'), [[{
+      .use(webpackPlugin, [[{
         from: path.resolve(__dirname, 'frontend/public'),
         to: path.resolve(__dirname, 'dist'),
         toType: 'dir',
