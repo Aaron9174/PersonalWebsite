@@ -9,16 +9,16 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">Name</th>
+              <th scope="col">Title</th>
               <th scope="col">Purpose</th>
               <th scope="col">Author</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>foo</td>
-              <td>bar</td>
-              <td>foobar</td>
+            <tr v-for="(section, index) in sections" :key="index">
+              <td>{{section.title}}</td>
+              <td>{{section.purpose}}</td>
+              <td>{{section.author}}</td>
               <td>
                 <div class="btn-group" role="group">
                   <button type="button" class="btn btn-warning btn-sm">Update</button>
@@ -32,3 +32,34 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      sections: [],
+    };
+  },
+  methods: {
+    getSections() {
+      const path = 'http://localhost:5000/sections';
+
+      axios.get(path)
+        .then((res) => {
+          this.sections = res.data.sections;
+          // eslint-disable-next-line
+          console.log(this.sections);
+        })
+        .catch((error) => {
+          // eslint-disable-next-line
+          console.error(error);
+        });
+    },
+  },
+  created() {
+    this.getSections();
+  },
+};
+</script>
