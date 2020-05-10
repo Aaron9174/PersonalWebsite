@@ -1,24 +1,46 @@
 {
   "name": "personalwebsite",
   "version": "0.0.0",
-  "description": "Project to produce a personal website that will work as a repository for everything that I read online.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build frontend/src",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Aaron9174/PersonalWebsite.git"
-  },
-  "author": "Aaron Hebson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Aaron9174/PersonalWebsite/issues"
-  },
-  "homepage": "https://github.com/Aaron9174/PersonalWebsite#readme",
   "dependencies": {
-    "client": "0.0.1",
-    "create": "0.0.2",
-    "vue": "^2.6.11"
-  }
+    "axios": "~0.18.0",
+    "core-js": "^3.6.5",
+    "vue": "~2.6.11",
+    "vue-router": "~3.1.6"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-plugin-eslint": "^4.3.0",
+    "@vue/cli-service": "^4.3.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
