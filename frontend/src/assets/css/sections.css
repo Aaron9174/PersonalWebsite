@@ -1,0 +1,4 @@
+/* Added since bootstrap (4.5.0) default is pitch black */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}

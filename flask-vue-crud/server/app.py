@@ -1,4 +1,10 @@
-from flask import Flask, jsonify
+# -------------------------------- #
+#              app.py              #
+#       Author: Aaron Hebson       #
+#    Entry point of the server     #
+# -------------------------------- #
+
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 # configuration
@@ -10,6 +16,11 @@ app.config.from_object(__name__)
 
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
+
+# sanity check route
+@app.route('/ping', methods=['GET'])
+def ping_pong():
+  return jsonify('pong!')
 
 # add predefined sections for now
 SECTIONS = [
@@ -31,17 +42,20 @@ SECTIONS = [
 ]
 
 # sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-  return jsonify('pong!')
-
-# sanity check route
-@app.route('/sections', methods=['GET'])
+@app.route('/sections', methods=['get','post'])
 def all_sections():
-  return jsonify({
-    'status': 'success',
-    'sections': SECTIONS,
-  })
+  response_object = {'status': 'success'}
+  if request.method == 'POST':
+    post_data = request.get_json()
+    SECTIONS.append({
+      'title': post_data.get('title'),
+      'author': post_data.get('author'),
+      'purpose': post_data.get('purpose')
+    })
+    response_object['message'] = 'section added!'
+  else:
+    response_object['sections'] = SECTIONS
+  return jsonify(response_object)
 
 if __name__ == '__main__':
   app.run()

@@ -1,3 +1,9 @@
+// -------------------------------- //	
+//              index.js            //	
+//       Author: Aaron Hebson       //	
+//  Defines all the routes for app  //	
+// -------------------------------- //
+
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Ping from '../components/Ping.vue';

@@ -1,3 +1,10 @@
+
+// -------------------------------- //	
+//           vue.config.js          //	
+//       Author: Aaron Hebson       //	
+//   Defines config items for Vue   //	
+// -------------------------------- //
+
 const path = require('path');
 const webpackPlugin = require('copy-webpack-plugin');
 
