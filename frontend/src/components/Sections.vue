@@ -4,6 +4,7 @@
       <div class="col-sm-10">
         <h1> Sections </h1>
         <hr><br><br>
+        <alert :message="message" v-if="showMessage"></alert>
         <b-button type="button"
                   class="btn btn-success btn-sm"
                   v-b-modal.section-modal>
@@ -78,6 +79,7 @@
 
 <script>
 import axios from 'axios';
+import Alert from './Alert.vue';
 
 export default {
   data() {
@@ -88,7 +90,12 @@ export default {
         author: '',
         purpose: '',
       },
+      message: '',
+      showMessage: false,
     };
+  },
+  components: {
+    alert: Alert,
   },
   methods: {
     getSections() {
@@ -109,6 +116,8 @@ export default {
       axios.post(path, payload)
         .then(() => {
           this.getSections();
+          this.message = 'Section added!';
+          this.showMessage = true;
         })
         .catch((error) => {
           // eslint-disable-next-line
@@ -146,4 +155,4 @@ export default {
 
 <style>
   @import '../assets/css/sections.css';
-</style>>
+</style>
